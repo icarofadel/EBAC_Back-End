@@ -1,0 +1,15 @@
+package testesStream;
+
+import org.junit.Test;
+import org.junit.Assert;
+
+public class testeFiltroF {
+	
+	@Test
+	public void testeFiltro() {
+		criarPessoa NomeF = new criarPessoa();
+		NomeF.;
+		
+		Assert.assertEquals("Ana F", NomeF.filtrarPorSexo("F"));
+	}
+}

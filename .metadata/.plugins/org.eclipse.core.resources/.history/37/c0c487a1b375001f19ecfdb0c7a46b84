@@ -1,0 +1,11 @@
+package testesStream;
+
+import org.junit.Test;
+
+public class testeFiltroF {
+	
+	@Test
+	public void testeFiltro() {
+		
+	}
+}

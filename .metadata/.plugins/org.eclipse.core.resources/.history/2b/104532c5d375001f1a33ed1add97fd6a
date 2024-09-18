@@ -1,0 +1,31 @@
+package testesStream;
+
+import org.junit.Test;
+import CadPessoa.criarPessoa;
+import domain.Pessoa;
+import org.junit.Assert;
+import java.util.List;
+
+public class testeFiltroF {
+    
+    @Test
+    public void testeFiltro() {
+        // Instanciando o serviço de pessoa
+        criarPessoa pessoaService = new criarPessoa();
+
+        // Adicionando pessoas ao serviço manualmente, já que a criação de pessoas no scanner
+        // não pode ser automatizada para este tipo de teste unitário.
+        pessoaService.listarPessoas().add(new Pessoa("Ana", "F"));
+        pessoaService.listarPessoas().add(new Pessoa("João", "M"));
+        pessoaService.listarPessoas().add(new Pessoa("Maria", "F"));
+
+        // Filtrando por sexo feminino
+        List<Pessoa> femininas = pessoaService.filtrarPorSexo("F");
+
+        // Verificando se a lista contém apenas as pessoas do sexo feminino
+        Assert.assertEquals(2, femininas.size());  // Verificando se o tamanho é 2 (Ana e Maria)
+        Assert.assertTrue(femininas.stream().allMatch(pessoa -> pessoa.getSexo().equalsIgnoreCase("F")));  // Verifica se todos são "F"
+        Assert.assertTrue(femininas.stream().anyMatch(pessoa -> pessoa.getNome().equals("Ana")));  // Verifica se Ana está na lista
+        Assert.assertTrue(femininas.stream().anyMatch(pessoa -> pessoa.getNome().equals("Maria")));  // Verifica se Maria está na lista
+    }
+}

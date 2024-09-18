@@ -1,0 +1,7 @@
+INDEX VERSION 1.134+C:\Users\icaro\OneDrive\Documentos\OneDrive\Aulas Programação\Desenvolvedor Java EBAC\Back-End\testesStream\.metadata\.plugins\org.eclipse.jdt.core
+518796741.index
+2525411224.index
+2004096481.index
+1865797976.index
+699832923.index
+2378731588.index

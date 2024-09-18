@@ -1,0 +1,13 @@
+package testesStream;
+
+import org.junit.Test;
+
+import CadPessoa.criarPessoa;
+
+public class testeFiltroF {
+	
+	@Test
+	public void testeFiltro() {
+		testeFiltro NomeF = new criarPessoa()
+	}
+}

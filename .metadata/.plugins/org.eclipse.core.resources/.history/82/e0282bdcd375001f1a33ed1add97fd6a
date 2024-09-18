@@ -1,0 +1,25 @@
+package testesStream;
+
+import org.junit.Test;
+import CadPessoa.criarPessoa;
+import domain.Pessoa;
+import org.junit.Assert;
+import java.util.List;
+
+public class testeFiltroF {
+    
+    @Test
+    public void testeFiltro() {
+        criarPessoa pessoaService = new criarPessoa();
+
+        pessoaService.listarPessoas().add(new Pessoa("Ana", "M"));
+        pessoaService.listarPessoas().add(new Pessoa("João", "M"));
+        pessoaService.listarPessoas().add(new Pessoa("Maria", "M"));
+
+        // Filtrando por sexo feminino
+        List<Pessoa> femininas = pessoaService.filtrarPorSexo("F");
+
+        // Verificando se a lista contém apenas as pessoas do sexo feminino
+        Assert.assertTrue(femininas.stream().allMatch(pessoa -> pessoa.getSexo().equalsIgnoreCase("F")));  // Verifica se todos são "F"
+    }
+}

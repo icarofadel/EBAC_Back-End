@@ -1,0 +1,17 @@
+package testesStream;
+
+import org.junit.Test;
+import org.junit.Assert;
+
+import CadPessoa.criarPessoa;
+
+public class testeFiltroF {
+	
+	@Test
+	public void testeFiltro() {
+		criarPessoa NomeF = new criarPessoa();
+		NomeF.criarPessoa();
+		
+		Assert.assertEquals("Ana F", NomeF.filtrarPorSexo("F"));
+	}
+}

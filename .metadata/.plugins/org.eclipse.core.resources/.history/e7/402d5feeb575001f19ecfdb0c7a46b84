@@ -1,0 +1,46 @@
+package testesStream;
+
+import org.junit.Test;
+import domain.Pessoa;
+
+import org.junit.Assert;
+import java.util.ArrayList;
+import java.util.List;
+
+public class testeFiltroF {
+	
+	@Test
+	public void testeFiltro() {
+		// Criando uma lista de pessoas de exemplo
+		List<Pessoa> pessoas = new ArrayList<>();
+		
+		Pessoa pessoa1 = new Pessoa();
+		pessoa1.setNome("Ana");
+		pessoa1.setSexo("F");
+
+		Pessoa pessoa2 = new Pessoa();
+		pessoa2.setNome("João");
+		pessoa2.setSexo("M");
+
+		Pessoa pessoa3 = new Pessoa();
+		pessoa3.setNome("Maria");
+		pessoa3.setSexo("F");
+		
+		// Adicionando as pessoas à lista
+		pessoas.add(pessoa1);
+		pessoas.add(pessoa2);
+		pessoas.add(pessoa3);
+		
+		// Instanciando o serviço de pessoa e passando a lista de pessoas
+		criarPessoa pessoaService = new criarPessoa(pessoas);
+
+		// Filtrando por sexo feminino
+		List<Pessoa> femininas = pessoaService.filtrarPorSexo("F");
+
+		// Verificando se a lista contém apenas as pessoas do sexo feminino
+		Assert.assertEquals(2, femininas.size());  // Verificando se o tamanho é 2 (Ana e Maria)
+		Assert.assertTrue(femininas.stream().allMatch(pessoa -> pessoa.getSexo().equalsIgnoreCase("F")));  // Verifica se todos são "F"
+		Assert.assertTrue(femininas.stream().anyMatch(pessoa -> pessoa.getNome().equals("Ana")));  // Verifica se Ana está na lista
+		Assert.assertTrue(femininas.stream().anyMatch(pessoa -> pessoa.getNome().equals("Maria")));  // Verifica se Maria está na lista
+	}
+}
