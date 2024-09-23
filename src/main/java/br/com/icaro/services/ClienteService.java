@@ -12,15 +12,21 @@ public class ClienteService implements IClienteService {
 	}
 
 	@Override
-	public void salvar(Cliente cliente) {
+	public Boolean salvar(Cliente cliente) {
 		// TODO Auto-generated method stub
-		clienteDAO.salvar(cliente);
+		return clienteDAO.salvar(cliente);
 	}
 
 	@Override
 	public Cliente bucarPorCPF(Long cpf) {
 		// TODO Auto-generated method stub
 		return clienteDAO.bucarPorCPF(cpf);
+	}
+
+	@Override
+	public void excluir(Long cpf) {
+		// TODO Auto-generated method stub
+		//clienteDAO.excluir();
 	}
 
 }
