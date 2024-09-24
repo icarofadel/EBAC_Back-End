@@ -7,6 +7,7 @@ import org.junit.Test;
 import br.com.icaro.dao.ClienteDaoMock;
 import br.com.icaro.dao.IClienteDAO;
 import br.com.icaro.domain.Cliente;
+import br.com.icaro.exceptions.TipoChaveNaoEncontradaException;
 
 public class ClienteDAOTest {
 	
@@ -19,7 +20,7 @@ public class ClienteDAOTest {
 	}
 	
 	@Before
-	public void init() {
+	public void init() throws TipoChaveNaoEncontradaException {
 		//Criando cliente
 		cliente = new Cliente();
 		cliente.setCpf(49140092852L);
@@ -29,20 +30,21 @@ public class ClienteDAOTest {
 		cliente.setNumero(183);
 		cliente.setCidade("Guarulhos");
 		cliente.setEstado("São Paulo");
+		clienteDao.cadastrar(cliente);
 	}
 
 	@Test
 	public void pesquisarCliente() {
 		
-		Cliente clienteConsultado = clienteDao.bucarPorCPF(cliente.getCpf());
+		Cliente clienteConsultado = clienteDao.consultar(cliente.getCpf());
 		
 		Assert.assertNotNull(clienteConsultado);
 	}
 	
 	@Test
-	public void salvarCliente() {
+	public void salvarCliente() throws TipoChaveNaoEncontradaException {
 		// salvar cliente
-		Boolean retorno = clienteDao.salvar(cliente);
+		Boolean retorno = clienteDao.cadastrar(cliente);
 		
 		Assert.assertTrue(retorno);
 	}
@@ -50,5 +52,14 @@ public class ClienteDAOTest {
 	@Test
 	public void excluirCliente() {
 		clienteDao.excluir(cliente.getCpf());
+	}
+	
+	@Test
+	public void alterarCliente() throws TipoChaveNaoEncontradaException {
+		cliente.setNome("Icaro Natã");
+		clienteDao.alterar(cliente);
+		
+		Assert.assertEquals("Icaro Natã", cliente.getNome());
+		
 	}
 }

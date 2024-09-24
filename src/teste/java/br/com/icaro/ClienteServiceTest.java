@@ -7,6 +7,7 @@ import org.junit.Test;
 import br.com.icaro.dao.ClienteDaoMock;
 import br.com.icaro.dao.IClienteDAO;
 import br.com.icaro.domain.Cliente;
+import br.com.icaro.exceptions.TipoChaveNaoEncontradaException;
 import br.com.icaro.services.ClienteService;
 import br.com.icaro.services.IClienteService;
 
@@ -45,7 +46,7 @@ public class ClienteServiceTest {
 	}
 	
 	@Test
-	public void salvarCliente() {
+	public void salvarCliente() throws TipoChaveNaoEncontradaException {
 		// salvar cliente
 		Boolean retorno = clienteService.salvar(cliente);
 		
@@ -55,5 +56,12 @@ public class ClienteServiceTest {
 	@Test
 	public void excluirCliente() {
 		clienteService.excluir(cliente.getCpf());
+	}
+	
+	@Test
+	public void alterarCliente() throws TipoChaveNaoEncontradaException {
+		cliente.setNome("Icaro Natã");
+		clienteService.alterar(cliente);
+		Assert.assertEquals("Icaro Natã", cliente.getNome());
 	}
 }

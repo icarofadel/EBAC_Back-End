@@ -1,25 +1,30 @@
 package br.com.icaro.dao;
 
 import br.com.icaro.domain.Cliente;
+import br.com.icaro.reflections.anotacao.cadastro.dao.generic.GenericDAO;
 
-public class ClienteDAO implements IClienteDAO {
+public class ClienteDAO extends GenericDAO<Cliente, Long> implements IClienteDAO {
 
-	@Override
-	public Boolean salvar(Cliente cliente) {
-		// TODO Auto-generated method stub
-		return true;
+	public ClienteDAO() {
+		super();
 	}
 
 	@Override
-	public Cliente bucarPorCPF(Long cpf) {
-		// TODO Auto-generated method stub
-		return null;
+	public Class<Cliente> getTipoClasse() {
+		return Cliente.class;
 	}
 
 	@Override
-	public void excluir(Long cpf) {
-		// TODO Auto-generated method stub
+	public void atualiarDados(Cliente entity, Cliente entityCadastrado) {
+		entityCadastrado.setCidade(entity.getCidade());
+		entityCadastrado.setCpf(entity.getCpf());
+		entityCadastrado.setEnd(entity.getEnd());
+		entityCadastrado.setEstado(entity.getEstado());
+		entityCadastrado.setNome(entity.getNome());
+		entityCadastrado.setNumero(entity.getNumero());
+		entityCadastrado.setTel(entity.getTel());
 		
 	}
+
 
 }

@@ -4,16 +4,12 @@
 package br.com.icaro.dao;
 
 import br.com.icaro.domain.Cliente;
+import br.com.icaro.reflections.anotacao.cadastro.dao.generic.IGenericDAO;
 
 /**
  * 
  */
-public interface IClienteDAO {
+public interface IClienteDAO extends IGenericDAO<Cliente, Long> {
 
-	Boolean salvar(Cliente cliente);
-	
-	Cliente bucarPorCPF(Long cpf);
-
-	void excluir(Long cpf);
 
 }

@@ -1,6 +1,8 @@
 package br.com.icaro.domain;
 
-public class Cliente {
+import br.com.icaro.reflections.anotacao.cadastro.domain.Persistente;
+
+public class Cliente implements Persistente {
 
 	private String nome;
 	private Long cpf;

@@ -2,6 +2,7 @@ package br.com.icaro.services;
 
 import br.com.icaro.dao.IClienteDAO;
 import br.com.icaro.domain.Cliente;
+import br.com.icaro.exceptions.TipoChaveNaoEncontradaException;
 
 public class ClienteService implements IClienteService {
 	
@@ -12,21 +13,27 @@ public class ClienteService implements IClienteService {
 	}
 
 	@Override
-	public Boolean salvar(Cliente cliente) {
+	public Boolean salvar(Cliente cliente) throws TipoChaveNaoEncontradaException {
 		// TODO Auto-generated method stub
-		return clienteDAO.salvar(cliente);
+		return clienteDAO.cadastrar(cliente);
 	}
 
 	@Override
 	public Cliente bucarPorCPF(Long cpf) {
 		// TODO Auto-generated method stub
-		return clienteDAO.bucarPorCPF(cpf);
+		return clienteDAO.consultar(cpf);
 	}
 
 	@Override
 	public void excluir(Long cpf) {
 		// TODO Auto-generated method stub
-		//clienteDAO.excluir();
+		clienteDAO.excluir(cpf);
+	}
+
+	@Override
+	public void alterar(Cliente cliente) throws TipoChaveNaoEncontradaException {
+		// TODO Auto-generated method stub
+		clienteDAO.alterar(cliente);
 	}
 
 }

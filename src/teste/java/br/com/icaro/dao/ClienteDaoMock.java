@@ -1,27 +1,44 @@
 package br.com.icaro.dao;
 
+import java.util.Collection;
+
 import br.com.icaro.domain.Cliente;
+import br.com.icaro.exceptions.TipoChaveNaoEncontradaException;
 
 public class ClienteDaoMock implements IClienteDAO {
 
 	@Override
-	public Boolean salvar(Cliente cliente) {
+	public Boolean cadastrar(Cliente entity) throws TipoChaveNaoEncontradaException {
 		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
-	public Cliente bucarPorCPF(Long cpf) {
+	public void excluir(Long valor) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void alterar(Cliente entity) throws TipoChaveNaoEncontradaException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Cliente consultar(Long valor) {
 		// TODO Auto-generated method stub
 		Cliente cliente = new Cliente();
-		cliente.setCpf(cpf);
+		cliente.setCpf(valor);
 		return cliente;
 	}
 
 	@Override
-	public void excluir(Long cpf) {
+	public Collection<Cliente> buscarTodos() {
 		// TODO Auto-generated method stub
-		
+		return null;
 	}
+
+
 
 }
