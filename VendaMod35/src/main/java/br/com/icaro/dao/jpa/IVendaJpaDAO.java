@@ -1,12 +1,10 @@
-/**
- * 
- */
 package br.com.icaro.dao.jpa;
 
 import br.com.icaro.dao.generic.jpa.IGenericJpaDAO;
 import br.com.icaro.domain.jpa.VendaJpa;
 import br.com.icaro.exceptions.DAOException;
 import br.com.icaro.exceptions.TipoChaveNaoEncontradaException;
+
 
 public interface IVendaJpaDAO extends IGenericJpaDAO<VendaJpa, Long>{
 

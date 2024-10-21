@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Rerun br.com.icaro.dao.jpa.ClienteJpaDaoTest" project="VendaMod35" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="br.com.icaro.dao.jpa.ClienteJpaDaoTest" time="12.425">
+    <testcase name="salvarCliente" classname="br.com.icaro.dao.jpa.ClienteJpaDaoTest" time="5.556"/>
+    <testcase name="excluirCliente" classname="br.com.icaro.dao.jpa.ClienteJpaDaoTest" time="1.803"/>
+    <testcase name="pesquisarCliente" classname="br.com.icaro.dao.jpa.ClienteJpaDaoTest" time="1.149"/>
+    <testcase name="alterarCliente" classname="br.com.icaro.dao.jpa.ClienteJpaDaoTest" time="1.899"/>
+    <testcase name="buscarTodos" classname="br.com.icaro.dao.jpa.ClienteJpaDaoTest" time="2.016"/>
+  </testsuite>
+</testrun>

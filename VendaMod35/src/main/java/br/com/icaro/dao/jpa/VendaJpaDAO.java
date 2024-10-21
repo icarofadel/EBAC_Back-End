@@ -1,6 +1,3 @@
-/**
- * 
- */
 package br.com.icaro.dao.jpa;
 
 import javax.persistence.TypedQuery;
@@ -8,15 +5,14 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-import br.com.icaro.dao.generic.jpa.GenericJpaDAO;
+import br.com.icaro.dao.generic.jpa.GenericJpaDB1DAO;
 import br.com.icaro.domain.jpa.ClienteJpa;
 import br.com.icaro.domain.jpa.ProdutoJpa;
 import br.com.icaro.domain.jpa.VendaJpa;
 import br.com.icaro.exceptions.DAOException;
 import br.com.icaro.exceptions.TipoChaveNaoEncontradaException;
 
-
-public class VendaJpaDAO extends GenericJpaDAO<VendaJpa, Long> implements IVendaJpaDAO {
+public class VendaJpaDAO extends GenericJpaDB1DAO<VendaJpa, Long> implements IVendaJpaDAO {
 
 	public VendaJpaDAO() {
 		super(VendaJpa.class);

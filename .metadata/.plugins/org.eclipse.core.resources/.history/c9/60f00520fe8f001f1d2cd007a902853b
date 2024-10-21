@@ -1,0 +1,5 @@
+package br.com.icaro.dao.generic.jpa;
+
+public class GenericJpaBD1DAO {
+
+}

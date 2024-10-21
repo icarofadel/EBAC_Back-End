@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="br.com.icaro.dao.generic.jpa.GenericJpaDAO"/>
+    <fullyQualifiedTypeName name="br.com.icaro.dao.jpa.Persistente"/>
+    <fullyQualifiedTypeName name="br.com.icaro.dao.generic.jpa.IGenericJpaDAO"/>
+    <fullyQualifiedTypeName name="br.com.icaro.dao.jpa.VendaExclusaoJpaDAO"/>
+</qualifiedTypeNameHistroy>

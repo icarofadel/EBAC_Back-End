@@ -20,7 +20,7 @@ import br.com.icaro.exceptions.TipoChaveNaoEncontradaException;
 
 public class ClienteJpaDaoTest {
 	
-	private IClienteJpaDAO clienteDao;
+	private IClienteJpaDAO<ClienteJpa> clienteDao;
 	
 	private Random rd;
 	
@@ -90,12 +90,12 @@ public class ClienteJpaDaoTest {
 		ClienteJpa clienteConsultado = clienteDao.consultar(cliente.getId());
 		Assert.assertNotNull(clienteConsultado);
 		
-		clienteConsultado.setNome("Rodrigo Pires");
+		clienteConsultado.setNome("Icaro Natã");
 		clienteDao.alterar(clienteConsultado);
 		
 		ClienteJpa clienteAlterado = clienteDao.consultar(clienteConsultado.getId());
 		Assert.assertNotNull(clienteAlterado);
-		Assert.assertEquals("Rodrigo Pires", clienteAlterado.getNome());
+		Assert.assertEquals("Icaro Natã", clienteAlterado.getNome());
 		
 		clienteDao.excluir(cliente);
 		clienteConsultado = clienteDao.consultar(clienteAlterado.getId());
@@ -133,7 +133,7 @@ public class ClienteJpaDaoTest {
 	private ClienteJpa criarCliente() {
 		ClienteJpa cliente = new ClienteJpa();
 		cliente.setCpf(rd.nextLong());
-		cliente.setNome("Rodrigo");
+		cliente.setNome("Icaro");
 		cliente.setCidade("São Paulo");
 		cliente.setEnd("End");
 		cliente.setEstado("SP");
